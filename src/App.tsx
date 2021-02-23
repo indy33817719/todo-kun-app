@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from 'stores/reducers'
 import { ToDos } from 'components/ToDosComponent'
 import { AddToDoButton } from 'components/AddToDoButtonComponent'
+import { AddToDo } from 'components/AddToDoComponent'
 
 export const App: React.FC = () => {
   const countValue = useSelector((state: RootState) => state.count.value)
@@ -18,6 +19,7 @@ export const App: React.FC = () => {
   return (
     <div className="w-full h-full container mx-auto">
       <AddToDoButton></AddToDoButton>
+      <AddToDo></AddToDo>
       <ToDos></ToDos>
       {/* <div>{ countValue }</div>
       <button onClick={() => clickHandler()}>+1</button> */}
