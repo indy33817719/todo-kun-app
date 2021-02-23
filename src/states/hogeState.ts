@@ -5,11 +5,11 @@ export interface CountState {
   value: number,
 }
 
-const initialState: CountState = {
+export const countInitialState: CountState = {
   value: 0
 }
 
-export const countReducer = reducerWithInitialState(initialState)
+export const countReducer = reducerWithInitialState(countInitialState)
   .case(countAction.increment, (state, count) => {
     console.log(state)
     console.log(state.value)
