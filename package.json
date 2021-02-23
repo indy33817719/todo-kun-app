@@ -24,8 +24,14 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "prestart": "tailwindcss build src/tailwind.css -o src/tailwind.compiled.css",
+    "start": "npm-run-all --parallel start:postcss start:cra",
+    "start:cra": "react-scripts start",
+    "start:postcss": "postcss src/tailwind.css -o src/tailwind.compiled.css -w",
+    "prebuild": "tailwindcss build src/tailwind.css -o src/tailwind.compiled.css",
+    "build": "npm-run-all build:postcss build:cra",
+    "build:cra": "react-scripts build",
+    "build:postcss": "postcss src/tailwind.css -o src/tailwind.compiled.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -49,6 +55,11 @@
   },
   "devDependencies": {
     "@types/react-redux": "^7.1.16",
-    "@types/redux-thunk": "^2.1.0"
+    "@types/redux-thunk": "^2.1.0",
+    "autoprefixer": "^10.2.4",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.3"
   }
 }

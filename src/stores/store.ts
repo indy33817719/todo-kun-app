@@ -3,6 +3,7 @@ import { RootReducer, RootState } from 'stores/reducers'
 import { countInitialState } from 'states/hogeState'
 import thunk from 'redux-thunk';
 
+// ChromeでReduxDevToolsを使用する為、window型を拡張
 interface ExtendedWindow extends Window {
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
 }
