@@ -1,7 +1,7 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { RootReducer, RootState } from 'stores/reducers'
-import { countInitialState } from 'states/hogeState'
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, compose } from "redux";
+import { RootReducer, RootState } from "stores/reducers";
+import { countInitialState } from "states/hogeState";
+import thunk from "redux-thunk";
 
 // ChromeでReduxDevToolsを使用する為、window型を拡張
 interface ExtendedWindow extends Window {
@@ -9,16 +9,18 @@ interface ExtendedWindow extends Window {
 }
 declare var window: ExtendedWindow;
 
-const composeReduxDevToolsEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeReduxDevToolsEnhancers =
+  (typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+  compose;
 
-const rootInitialState: RootState = {
-  count: countInitialState
-}
+// const rootInitialState: RootState = {
+//   count: countInitialState
+// }
 
 const store = createStore(
   RootReducer,
-  rootInitialState,
+  // rootInitialState,
   composeReduxDevToolsEnhancers()
-  );
+);
 
 export default store;
