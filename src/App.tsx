@@ -4,8 +4,10 @@ import './App.css';
 import { countAction } from 'actions/countActions'
 import { useSelector } from 'react-redux'
 import { RootState } from 'stores/reducers'
+import { ToDos } from 'components/ToDosComponent'
+import { AddToDoButton } from 'components/AddToDoButtonComponent'
 
-function App() {
+export const App: React.FC = () => {
   const countValue = useSelector((state: RootState) => state.count.value)
   const dispatch = useDispatch()
   const clickHandler = () => {
@@ -14,11 +16,11 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div>{ countValue }</div>
-      <button onClick={() => clickHandler()}>+1</button>
+    <div className="w-full h-full">
+      <AddToDoButton></AddToDoButton>
+      <ToDos></ToDos>
+      {/* <div>{ countValue }</div>
+      <button onClick={() => clickHandler()}>+1</button> */}
     </div>
   ); 
 }
-
-export default App;
