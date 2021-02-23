@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useDispatch } from 'react-redux'
 import './App.css';
+import { countAction } from 'actions/countActions'
+import { useSelector } from 'react-redux'
+import { RootState } from 'stores/reducers'
 
 function App() {
+  const countValue = useSelector((state: RootState) => state.count.value)
+  const dispatch = useDispatch()
+  const clickHandler = () => {
+    console.log('clicked!')
+    dispatch({ type: (countAction.increment)})
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>{ countValue }</div>
+      <button onClick={() => clickHandler()}>+1</button>
     </div>
-  );
+  ); 
 }
 
 export default App;
