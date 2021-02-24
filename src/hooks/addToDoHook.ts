@@ -15,7 +15,7 @@ export const useAddToDoHook = () => {
   return {
     addToDo: {
       updateOpen: toggleAddToDoModal,
-      isOpenModal,
+      isOpen: isOpenModal,
     }
   }
 
