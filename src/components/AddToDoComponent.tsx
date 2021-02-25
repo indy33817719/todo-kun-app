@@ -32,15 +32,33 @@ export const AddToDo: React.FC = () => {
                     <label className="leading-loose">タイトル</label>
                     <input
                       type="text"
-                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-96 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                       placeholder="タイトルを入力してください"
                     />
                     <label className="leading-loose">内容</label>
                     <input
                       type="text"
-                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-96 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                       placeholder="内容を入力してください"
                     />
+                    <div className="flex justify-between mt-6">
+                      <div>
+                        <label className="leading-loose mr-2">予定</label>
+                        <input
+                          type="text"
+                          className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-28 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                          placeholder="予定時間(h)"
+                        />
+                      </div>
+                      <div>
+                        <label className="leading-loose mr-2">実績</label>
+                        <input
+                          type="text"
+                          className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-28 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                          placeholder="実績時間(h)"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center justify-between p-6 border-t border-solid border-gray-300 rounded-b">
