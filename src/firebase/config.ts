@@ -1,7 +1,7 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
-const config = {
+export const firebaseConfig = {
   apiKey: "AIzaSyCD3MMF9aRiacV0uOvpy8n0DAwwzhbWhek",
   authDomain: "todo-kun.firebaseapp.com",
   projectId: "todo-kun",
@@ -10,6 +10,8 @@ const config = {
   appId: "1:1057583097277:web:5ffa433f3b08f3bdc75ed4"
 }
 
-firebase.initializeApp(config);
+const fire = firebase.initializeApp(firebaseConfig)
 
-export default firebase;
+export default fire
+
+

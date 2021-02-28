@@ -1786,6 +1786,14 @@
   "resolved" "https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz"
   "version" "1.1.0"
 
+"@react-firebase/auth@^0.2.10":
+  "integrity" "sha512-qeRv96HI5Y3nPRwO3Zi4QnYYeJstVu8lDih+QQbTeuadUUngchGw5Tp7dseOY5u3q/+e+kF2hV7BUkfYt7FS8g=="
+  "resolved" "https://registry.npmjs.org/@react-firebase/auth/-/auth-0.2.10.tgz"
+  "version" "0.2.10"
+  dependencies:
+    "lodash.get" "^4.4.2"
+    "render-and-add-props" "^0.5.0"
+
 "@reduxjs/toolkit@^1.5.0":
   "integrity" "sha512-E/FUraRx+8guw9Hlg/Ja8jI/hwCrmIKed8Annt9YsZw3BQp+F24t5I5b2OWR6pkEHY4hn1BgP08FrTZFRKsdaQ=="
   "resolved" "https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-1.5.0.tgz"
@@ -5681,7 +5689,7 @@
     "locate-path" "^5.0.0"
     "path-exists" "^4.0.0"
 
-"firebase@^8.2.9":
+"firebase@^8.2.9", "firebase@>=4":
   "integrity" "sha512-0QNPgKre9OHuBHwXKIs1wW1aPrO0wx1si3JMA46vPOmx/vkpQQD2OCxdZdVUc+y5u9d/yNMvVBR6j85H0O15rA=="
   "resolved" "https://registry.npmjs.org/firebase/-/firebase-8.2.9.tgz"
   "version" "8.2.9"
@@ -10327,7 +10335,7 @@
   optionalDependencies:
     "fsevents" "^2.1.3"
 
-"react@*", "react@^16.8.3 || ^17", "react@^17.0.1", "react@>= 16", "react@17.0.1":
+"react@*", "react@^16.8.3 || ^17", "react@^17.0.1", "react@>= 16", "react@>=15", "react@17.0.1":
   "integrity" "sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w=="
   "resolved" "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz"
   "version" "17.0.1"
@@ -10572,6 +10580,11 @@
   "integrity" "sha1-wkvOKig62tW8P1jg1IJJuSN52O8="
   "resolved" "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz"
   "version" "1.1.0"
+
+"render-and-add-props@^0.5.0":
+  "integrity" "sha512-jIVQsWxGDHwpMcI0d9w6OxF/GCtwL02Lyqk8aGjyF6LyR9GPLY+1ONwPjs6kbQ2d6gTApWk8aprZkBli0tpG/w=="
+  "resolved" "https://registry.npmjs.org/render-and-add-props/-/render-and-add-props-0.5.0.tgz"
+  "version" "0.5.0"
 
 "renderkid@^2.0.4":
   "integrity" "sha512-ccqoLg+HLOHq1vdfYNm4TBeaCDIi1FLt3wGojTDSvdewUv65oTmI3cnT2E4hRjl1gzKZIPK+KZrXzlUYKnR+vQ=="
