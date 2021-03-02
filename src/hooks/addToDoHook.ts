@@ -7,8 +7,6 @@ export const useAddToDoHook = () => {
   const dispatch = useDispatch()
 
   const toggleAddToDoModal = (v: boolean) => {
-    console.log('clicked!')
-    console.log(v)
     dispatch((addToDoActions.updateOpenAddToDo(v)))
   }
 
