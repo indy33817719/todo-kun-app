@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react"
-import { useAuthHook } from "hooks/authHook"
+import React, { useEffect, useState } from "react";
+import { useAuthHook } from "hooks/authHook";
 
 export const Login: React.FC = () => {
+  const authHook = useAuthHook();
+
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
       <div className="mb-4">
@@ -16,10 +18,10 @@ export const Login: React.FC = () => {
           id="username"
           type="text"
           placeholder="Username"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={authHook.email}
+          onChange={(e) => authHook.setEmail(e.target.value)}
         />
-        <p className="text-red text-xs italic">{emailError}</p>
+        <p className="text-red text-xs italic">{authHook.emailError}</p>
       </div>
       <div className="mb-6">
         <label
@@ -33,25 +35,25 @@ export const Login: React.FC = () => {
           id="password"
           type="password"
           placeholder="******************"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={authHook.password}
+          onChange={(e) => authHook.setPassword(e.target.value)}
         />
-        <p className="text-red text-xs italic">{passwordError}</p>
+        <p className="text-red text-xs italic">{authHook.passwordError}</p>
       </div>
       <div className="flex items-center justify-between">
         <button
           className="bg-blue hover:bg-blue-dark font-bold py-2 px-4 rounded"
           type="button"
-          onClick={handleLogin}
+          onClick={authHook.handleLogin}
         >
           Sign In
         </button>
         <button
           className="bg-blue hover:bg-blue-dark font-bold py-2 px-4 rounded"
           type="button"
-          onClick={handleSignup}
+          onClick={authHook.handleSignup}
         >
-          Sign In
+          Sign Up
         </button>
         {/* Forgot Password? */}
       </div>

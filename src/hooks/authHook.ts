@@ -1,14 +1,19 @@
-import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from 'stores/reducers'
+import { useState, useEffect } from "react";
+import fire from "firebase/config";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "stores/reducers";
+import { authActions } from "actions/authAction";
 
 export const useAuthHook = () => {
-  const [user, setUser] = useState<any>("");
+  const userAuth = useSelector((state: RootState) => state.auth.userAuth);
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [hasAccount, setHasAccount] = useState(false);
+
+  // ユーザー入力値はローカルstateで問題ない？
 
   const clearInputs = () => {
     setEmail("");
@@ -21,6 +26,7 @@ export const useAuthHook = () => {
   };
 
   const handleLogin = () => {
+    console.log("clicked");
     clearErrors();
     fire
       .auth()
@@ -62,28 +68,32 @@ export const useAuthHook = () => {
   };
 
   const authListener = () => {
-    
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
+        // ユーザーはサインイン中
         clearInputs();
-        setUser(user);
-        console.log('user=')
-        console.log({...user})
+        const loginUser = fire.auth().currentUser;
+        dispatch(authActions.updateUserAuth(loginUser));
       } else {
-        setUser("");
+        dispatch(authActions.updateUserAuth(""));
       }
     });
   };
 
   useEffect(() => {
     authListener();
-  }, [])
+    console.log(userAuth);
+  }, []);
 
   return {
+    email,
+    password,
+    emailError,
+    passwordError,
+    setEmail,
+    setPassword,
     handleLogin,
     handleLogout,
     handleSignup,
-    
-  }
-
-}
+  };
+};

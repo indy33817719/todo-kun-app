@@ -2,12 +2,12 @@ import { reducerWithInitialState } from 'typescript-fsa-reducers';
 import { addToDoActions } from 'actions/addToDoAction';
 import { EditToDo } from 'type'
 
-export interface AddToDoAction {
+export interface AddToDoState {
   isOpen: boolean,
   toDo: EditToDo,
 }
 
-export const addToDoInitialState: AddToDoAction = {
+export const addToDoInitialState: AddToDoState = {
   isOpen: false,
   toDo: {
     title: "",
